@@ -1,5 +1,38 @@
 from flask import Flask, render_template, url_for
 
+<<<<<<< HEAD
+
+app = Flask(__name__,)
+
+
+@app.route("/")
+@app.route("/home")
+def home():
+  #return "<h1>Welcome to Home Page!!</h1>"
+  #return render_template ("home.html") #Custom HTML Templates
+
+  #placeholder - {{}} - to pass value -- it possible by using jinja
+  return render_template("home.html",title= "Home")
+
+@app.route("/about")
+def about():
+  #return "<h1>Welcome to About Page!!</h1>"
+  #return render_template ("about.html") #Custom HTML Templates
+
+  #placeholder - {{}} - to pass value -- it possible by using jinja
+  return render_template("about.html",title= "About")
+
+
+@app.route("/evaluate/<int:num>")
+def evaluate(num):
+  return render_template("evaluate.html", title = "Evaluate", number = num)
+
+
+
+
+if __name__ == "__main__":
+  app.run(debug=True)
+=======
 from employees import employees_data
 
 app = Flask(__name__,)
@@ -40,3 +73,4 @@ def managers():
 
 if __name__ == "__main__":
   app.run(debug=True)
+>>>>>>> eaacee362ac47e8c3bc57ea993fc780fd6944705
