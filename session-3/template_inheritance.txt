@@ -1,0 +1,21 @@
+DRY 
+- Don't Repeat Yourself!!
+
+- We have home and about html files where we are repeting our code!!
+- So, use a layout.html (common bluprint of every page) and inherita the file from other html could be a smarter solution.
+
+- We will incorporate that layout.html page code inside our home.html file. And how we gonna do it?
+
+home.html
+  {% extends "layout.html" %}
+
+explain:
+--------
+
+- {} means jinja code.
+- And we are basically saying that home.html inherits from layout.html!!
+
+=======================================================
+** What is happening?
+- We came to the home endpoint; we called this home.html with the perameter (title = "Home") home.
+- And in home.html, we told that home.html is actually inheriting from layout.html. So, the perameter that will be propagated to layout.html file. This called inherit.

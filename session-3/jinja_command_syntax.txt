@@ -1,0 +1,108 @@
+Here's a breakdown of common Jinja command syntax used for templating, grouped by type:
+
+🧩 1. Variable Substitution (Placeholders)
+Used to insert variables:
+
+jinja
+Copy
+Edit
+{{ variable }}
+{{ user.name }}
+{{ my_list[0] }}
+{{ 2 + 3 }}
+🔁 2. Control Structures
+If Statement
+jinja
+Copy
+Edit
+{% if condition %}
+  <!-- content -->
+{% elif other_condition %}
+  <!-- content -->
+{% else %}
+  <!-- fallback -->
+{% endif %}
+For Loop
+jinja
+Copy
+Edit
+{% for item in list %}
+  {{ loop.index }} - {{ item }}
+{% endfor %}
+You can also use:
+
+jinja
+Copy
+Edit
+loop.index      # 1-based index
+loop.index0     # 0-based index
+loop.first      # True on first iteration
+loop.last       # True on last iteration
+🧱 3. Template Inheritance
+Extending a base template
+jinja
+Copy
+Edit
+{% extends "base.html" %}
+Block definition
+jinja
+Copy
+Edit
+{% block block_name %}
+  <!-- content -->
+{% endblock %}
+⚙️ 4. Macros (Reusable Functions)
+jinja
+Copy
+Edit
+{% macro render_input(name, value='', type='text') %}
+  <input type="{{ type }}" name="{{ name }}" value="{{ value }}">
+{% endmacro %}
+
+{{ render_input('username') }}
+⚗️ 5. Filters
+Filters transform the output:
+
+jinja
+Copy
+Edit
+{{ name|lower }}
+{{ users|length }}
+{{ description|truncate(50) }}
+Common filters:
+
+lower, upper, title
+
+length
+
+default
+
+replace
+
+truncate
+
+join
+
+🧪 6. Set Variables
+jinja
+Copy
+Edit
+{% set total = price * quantity %}
+🛠️ 7. Comments
+jinja
+Copy
+Edit
+{# This is a comment and will not be rendered #}
+✅ Summary Table
+
+Type	Syntax Example
+Variable	{{ name }}
+If Statement	{% if user %}...{% endif %}
+For Loop	{% for x in y %}...{% endfor %}
+Inheritance	{% extends "base.html" %}
+Block	{% block title %}...{% endblock %}
+Macro	{% macro name() %}...{% endmacro %}
+Filter	`{{ value
+Set Variable	{% set total = 100 %}
+
+Comment	{# This is a comment #}
